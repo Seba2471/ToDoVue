@@ -3,7 +3,7 @@
     <v-flex md6 >
     <v-layout row>
       <v-flex md12>
-        <h2 class="subheading grey--text"> Wybierz liste zadań która chcesz zobaczyć: </h2>
+        <h2 class="subheading grey--text"> Wybierz liste zadań która chcesz zobaczyć: trele morelte </h2>
       </v-flex>
     </v-layout>
     <v-layout row>
