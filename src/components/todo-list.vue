@@ -27,7 +27,10 @@
         </v-list>
       </v-layout>
       <v-flex md5><v-text-field v-model.trim="item"></v-text-field></v-flex>
-    <v-btn @click="addItem()"> DODAJ </v-btn>
+      <v-layout row>
+        <v-btn @click="addItem()"> DODAJ </v-btn>
+        <v-btn @click="deleteItem(index)"> USUN </v-btn>
+      </v-layout>
     </v-flex>
   </v-main>
 </template>
@@ -70,6 +73,9 @@ export default {
         this.items.push({name: this.item, done: false});
         this.item = "";
       }
+    },
+    deleteItem(){
+      console.log(this.items.find(this.items.done == true));
     }
   }
 };
