@@ -41,25 +41,13 @@ export default {
     return{
       done: false,
       item: "",
-      items: [
-        {
-        name: 'xxx',
-        done: false
-        },
-        {
-          name: 'yyy',
-          done: false
-        },
-        {
-          name: 'zzz',
-          done: false
-        },
-        {
-          name: 'ttt',
-          done: false
-        }]
+      items: []
     };
     },
+  async created(){
+    var response = await fetch('http://localhost:8000/viewset/task/');
+    this.items = await response.json();
+  },
   methods: {
     addItem(){
       var test=false;
