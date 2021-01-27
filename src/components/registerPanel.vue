@@ -88,6 +88,7 @@ export default {
     }
   },
   methods: {
+    //Wywolanie funckji rejestracji z store.js
     register() {
       if (this.valid()) {
         this.$store.dispatch('userRegister', {
@@ -99,11 +100,12 @@ export default {
               this.$router.push({name: 'Login'})
             })
             .catch(err => {
-              this.showExistsUser = true
+              this.showExistsUser = true //Wyswietla taki uzytkownik istnieje
               console.log(err)
             })
       }
     },
+    // sprawadza czy haslo i powotrz haslo sa takie same
     valid() {
       return this.password === this.rpassword
     }

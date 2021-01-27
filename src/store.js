@@ -5,6 +5,7 @@ import {getAPI} from "@/axios-api";
 
 Vue.use(Vuex)
 export default new Vuex.Store({
+    // Logowanie/Wylogowanie nadawanie tokenu (Nie zrobilem tylko refreshu)
     plugins: [createPersistedState()],
     state: {
         accessToken: null,
@@ -48,17 +49,17 @@ export default new Vuex.Store({
                     })
             })
         },
-        refreshToken: () => {
-            return new Promise((resolve,reject) => {
-                getAPI.post('api/token/refresh/')
-                    .then(response => {
-                        resolve(response);
-                    })
-                    .catch(error => {
-                        reject(error);
-                    })
-            })
-        },
+        // refreshToken: () => {
+        //     return new Promise((resolve,reject) => {
+        //         getAPI.post('api/token/refresh/')
+        //             .then(response => {
+        //                 resolve(response);
+        //             })
+        //             .catch(error => {
+        //                 reject(error);
+        //             })
+        //     })
+        // },
         userRegister(context,usercredentials) {
             return new Promise((resolve,reject) => {
                 getAPI.post('account/api/register', {

@@ -5,6 +5,7 @@
 <script>
 export default {
 
+  // Przy wywolaniu wylogowuje
   created() {
     this.$store.dispatch('userLogout')
       .then(() => {

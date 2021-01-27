@@ -97,16 +97,18 @@ export default {
     this.getTasks()
   },
   methods: {
-
+    //Token
     config() {
       return {headers: {Authorization: `Bearer ${this.$store.state.accessToken}`}}
     },
+    //Wpisane nazwa nie jest pusta
     notNull() {
       if (this.task != "") {
         return false
       }
       return true
     },
+    //Zapisanie zmian
     async saveEdit() {
       this.edit = true,
           this.save = false
@@ -123,6 +125,7 @@ export default {
             console.log(err)
           })
     },
+    // Pobranie taskow z backendu
     async getTasks() {
       await getAPI.get(`/viewset/task?list=${this.id}`, this.config())
           .then(response => {
@@ -132,6 +135,7 @@ export default {
             console.log(err)
           })
     },
+    // Dodanie nowego tasku
     async addItem() {
       var test = false;
       for (var i in this.tasks) {
@@ -157,6 +161,7 @@ export default {
         this.getTasks()
       }
     },
+    //Usuwanie tasku
     async deleteItem(id) {
       this.$fire({
         title: "Czy chcesz usunąć?",
@@ -171,6 +176,7 @@ export default {
         }
       })
     },
+    // Zmiana statusu zadania
     async setDone(name, done, id) {
       await getAPI.put(`/viewset/task/${id}/`, {
         "name": name,

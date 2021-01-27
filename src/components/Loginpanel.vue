@@ -60,6 +60,7 @@ export default {
     }
   },
   methods: {
+    //wywolanie funkcji logowania z store.js
     login() {
       this.$store.dispatch('userLogin', {
         username: this.username,
