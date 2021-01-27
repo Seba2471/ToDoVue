@@ -4,7 +4,6 @@ import router from './router'
 import store from '@/store'
 import vuetify from './plugins/vuetify';
 import VueSimpleAlert from "vue-simple-alert";
-import {getAPI} from "@/axios-api";
 
 Vue.config.productionTip = false
 Vue.use(VueSimpleAlert); // plugin od alertow
